@@ -18,7 +18,7 @@ function getWebView(urlPath) {
       webView,
       webFrame
     ) {
-      var locationHash = windowObject.evaluateWebScript("window.location.hash");
+      var locationHash = windowObject.evaluateWebScript("decodeURIComponent(window.location.hash)");
       // log(locationHash);
       if (locationHash.indexOf("@selectedLayerID=") > -1) {
         // Recieve "selete" signal
