@@ -46,11 +46,9 @@ function getWebView(urlPath) {
           );
 
           // Get layers' info
-          arr = App.getLayersAttrs(matchedLayers);
+          // Limit results' length to 15.
+          arr = App.getLayersAttrs(matchedLayers.slice(0, 15));
         }
-
-        // Limit results' length to 15.
-        arr = arr.slice(0, 15);
         
         // Execute webview's gloabl function, and pass data to it
         windowObject.evaluateWebScript(
