@@ -2,10 +2,9 @@
 
 import React from "react";
 import ReactDOM, { findDOMNode } from "react-dom";
-import { LocaleProvider, Select, Row, Col } from "antd";
+import { LocaleProvider, Select, Row, Col, Menu } from "antd";
 import enUS from "antd/lib/locale-provider/en_US";
 import Filter from "./Filter.jsx";
-const Option = Select.Option;
 
 import "./App.less";
 
@@ -70,7 +69,7 @@ class App extends React.Component {
       if (Object.keys(el).length && el.id) {
         const isTextLayer = el.class.toLowerCase().trim() == "mstextlayer";
         options.push(
-          <Option value={el.id} key={i}>
+          <Menu.Item data-value={el.id} key={i}>
             <Row style={{ textAlign: "center" }}>
               <Col title={decodeURIComponent(el.name)} span={6}>
                 {decodeURIComponent(el.name)}
@@ -101,14 +100,14 @@ class App extends React.Component {
               </Col>
               <Col span={6}>{el.parentClass}</Col>
             </Row>
-          </Option>
+          </Menu.Item>
         );
       }
     });
 
     if (options.length) {
       options.unshift(
-        <Option disabled value="122" key="541">
+        <Menu.Item disabled value="122" key="541">
           <Row style={{ textAlign: "center" }}>
             <Col span={6}>name</Col>
             <Col span={6}>
@@ -119,7 +118,7 @@ class App extends React.Component {
             <Col span={6}>parent name</Col>
             <Col span={6}>parent class</Col>
           </Row>
-        </Option>
+        </Menu.Item>
       );
     }
 
@@ -128,13 +127,13 @@ class App extends React.Component {
     this.setState({ options });
   }
 
-  onSelect(value) {
+  onSelect(item, key, selectedKeys) {
     // Send ObjectID to sketch plugin
     console.log("onSelect!");
     this.isSelecting = true;
 
     // send data
-    window.location.hash = "@selectedLayerID=" + value;
+    window.location.hash = "@selectedLayerID=" + item.item.props["data-value"];
 
     setTimeout(() => {
       this.isSelecting = false;
@@ -143,8 +142,6 @@ class App extends React.Component {
 
   onBlur() {
     console.log("onBlur!");
-    // request
-    window.location.hash = "@query=" + JSON.stringify({ value: "" });
   }
 
   onInput(value) {
@@ -184,20 +181,20 @@ class App extends React.Component {
             mode="combobox"
             size="large"
             className="searcher"
-            onBlur={this.onBlur.bind(this)}
             style={{
               width: "100%"
             }}
             allowClear
-            onSelect={this.onSelect.bind(this)}
             onChange={this.onInput.bind(this)}
             filterOption={false}
             placeholder="Just input it"
-            dropdownClassName="results-container"
+          >
+          </Select>
+          <Menu
+            onSelect={this.onSelect.bind(this)}
           >
             {this.state.options}
-          </Select>
-
+          </Menu>
         </div>
       </LocaleProvider>
     );
