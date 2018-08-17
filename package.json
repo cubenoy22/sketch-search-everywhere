@@ -4,7 +4,7 @@
   "description": "Search layer and select it, by matching `textValue`, `name` or `ObjectID`.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --optimize-minimize",
     "start": "webpack-dev-server",
     "watch": "webpack --progress --colors --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
