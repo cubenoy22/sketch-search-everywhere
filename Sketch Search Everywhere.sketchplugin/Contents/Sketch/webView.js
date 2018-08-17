@@ -4,6 +4,7 @@
 
 function getWebView(urlPath, width, height) {
   var webView = WebView.alloc().initWithFrame(NSMakeRect(0, 0, width, height));
+  webView.setAutoresizingMask(NSViewWidthSizable | NSViewHeightSizable);
   var windowObject = webView.windowScriptObject();
 
   // Awesome library

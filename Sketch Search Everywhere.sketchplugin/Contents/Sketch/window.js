@@ -19,9 +19,10 @@ function openWindow(webView, width, height) {
     NSMakeRect(0, 0, width, height),
     true
   );
+  SearchEverywhere.setMinSize(NSMakeSize(width, height));
 
   SearchEverywhere.setStyleMask(
-    NSTexturedBackgroundWindowMask | NSTitledWindowMask | NSClosableWindowMask
+    NSTexturedBackgroundWindowMask | NSTitledWindowMask | NSClosableWindowMask | NSResizableWindowMask
   );
   
   SearchEverywhere.setBackgroundColor(NSColor.colorWithRed_green_blue_alpha(255 / 255, 250 / 255, 240 / 255, 1));
