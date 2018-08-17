@@ -2,8 +2,9 @@
 
 @import 'app.js';
 
-function getWebView(urlPath) {
-  var webView = WebView.alloc().initWithFrame(NSMakeRect(0, 0, 480, 120));
+function getWebView(urlPath, width, height) {
+  var webView = WebView.alloc().initWithFrame(NSMakeRect(0, 0, width, height));
+  webView.setAutoresizingMask(NSViewWidthSizable | NSViewHeightSizable);
   var windowObject = webView.windowScriptObject();
 
   // Awesome library
@@ -54,14 +55,6 @@ function getWebView(urlPath) {
         windowObject.evaluateWebScript(
           'window.App.renderList("' + arr.join("|||") + '")'
         );
-
-        if (arr.length) {
-          // Expand box
-          App.setFrameExpand();
-        } else {
-          // Contract box
-          App.setFrameContract();
-        }
       }
     }
   });

@@ -47,7 +47,7 @@ class Filter extends React.Component {
           size="small"
           defaultValue="TextLayer"
           placeholder="Filter className"
-          dropdownStyle={{ maxHeight: 52, overflow: 'scroll' }}
+          dropdownStyle={{ overflow: 'scroll' }}
           filterOption={(input, option) =>
             option.props.children.toLowerCase().indexOf(input.toLowerCase()) >=
             0}

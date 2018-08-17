@@ -7,9 +7,16 @@ function onRun(context) {
   // initializing...
   App.init(context);
 
+  var windowWidth = 480;
+  var windowHeight = 360;
+
   openWindow(
     getWebView(
-      context.plugin.urlForResourceNamed("window.html").path()
-    )
+      context.plugin.urlForResourceNamed("window.html").path(),
+      windowWidth,
+      windowHeight
+    ),
+    windowWidth,
+    windowHeight
   );
 }
