@@ -1,4 +1,6 @@
-## Sketch Search Everywhere
+## Sketch Search Everywhere Mod
+
+This is mod version of [Sketch Search Everywhere](https://github.com/MrPeak/sketch-search-everywhere) by [MrPeak](https://github.com/MrPeak).
 
 > Sketch App plugin
 
@@ -6,20 +8,24 @@ Search layer and select it, by matching `textValue`, `name` or `ObjectID`.
 
 ## Installation
 
-[Download](https://github.com/MrPeak/sketch-search-everywhere/archive/master.zip) and extract the contents of this repository. Then double-click the `Sketch Search Everywhere.sketchplugin` bundle to install the plugin.
+[Download](https://github.com/cubenoy22/sketch-search-everywhere/archive/master.zip) and extract the contents of this repository. Then double-click the `Sketch Search Everywhere Mod.sketchplugin` bundle to install the plugin.
 
 ## Usage
 
-Just type <kbd>Alt</kbd>+<kbd>Command</kbd>+<kbd>F</kbd> everywhere.
+Just type <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>F</kbd> everywhere.
 
 And enter the textContent/Name/ObjectId that the layers cotain
 
 Then select the layer you find!
 
-![show](https://user-images.githubusercontent.com/2953176/27261189-6d36c61a-5470-11e7-8230-89fbe7c5a2a4.gif)
-
-
 ## Change Log
+
+#### v1.1.0: August 17, 2018
+
+- [x] Make window resizable and results are always shown 
+- [x] Make special characters and double byte characters searchable
+- [x] Improved search performance of very complicated files
+- [x] Plugin name has been changed
 
 #### v1.0.3: June 25, 2017
 

@@ -12,7 +12,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: './src/components/App.jsx',
   output: {
-    path: path.resolve('./Sketch Search Everywhere.sketchplugin/Contents/Resources/'), // Contents/Resources/script
+    path: path.resolve('./Sketch Search Everywhere Mod.sketchplugin/Contents/Resources/'), // Contents/Resources/script
     filename: 'index_bundle.js'
   },
   module: {

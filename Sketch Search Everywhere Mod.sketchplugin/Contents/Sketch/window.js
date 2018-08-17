@@ -4,7 +4,7 @@
 function openWindow(webView, width, height) {
   // SearchEverywhere main window
   var threadDictionary = NSThread.mainThread().threadDictionary();
-  var identifier = "com.github.mrpeak.search_text";
+  var identifier = "jp.cubenoy22.search_everywhere_mod";
 
   // Set to global
   App.threadDictionary = threadDictionary;
@@ -28,7 +28,7 @@ function openWindow(webView, width, height) {
   SearchEverywhere.setBackgroundColor(NSColor.colorWithRed_green_blue_alpha(255 / 255, 250 / 255, 240 / 255, 1));
 
   // Titlebar
-  SearchEverywhere.setTitle("Search Everywhere");
+  SearchEverywhere.setTitle("Search Everywhere Mod");
   SearchEverywhere.setTitlebarAppearsTransparent(true);
   SearchEverywhere.becomeKeyWindow();
   SearchEverywhere.setLevel(NSFloatingWindowLevel);

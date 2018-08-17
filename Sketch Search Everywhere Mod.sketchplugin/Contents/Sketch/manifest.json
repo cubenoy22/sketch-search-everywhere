@@ -1,0 +1,23 @@
+{
+  "author" : "cubenoy22",
+  "commands" : [
+    {
+      "script" : "main.js",
+      "handler" : "onRun",
+      "shortcut" : "command shift f",
+      "name" : "Search Everywhere Mod",
+      "identifier" : "run"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "run"
+    ]
+  },
+  "identifier" : "com.cubenoy22.search-everywhere-mod",
+  "version" : "1.1.0",
+  "description" : "Search layer and select it, by matching `textValue`, `name` or `ObjectID`.",
+  "authorEmail" : "cubenoy22@gmail.com",
+  "name" : "Search Everywhere Mod"
+}
