@@ -1,6 +1,4 @@
 var App = {
-  ADDITIONS_HEIGHT: 200,
-  IS_EXPAND: false,
   filters: {
     type: "stringValue",
     layerClass: "TextLayer"
@@ -15,35 +13,6 @@ var App = {
     App.COScript.setShouldKeepAround(false);
     App.threadDictionary.removeObjectForKey(App.identifier);
     App.SearchEverywhere.close();
-  },
-  setFrameExpand: function() {
-    if (this.IS_EXPAND) return false;
-
-    var _frame = App.SearchEverywhere.frame();
-    _frame.size.height += this.ADDITIONS_HEIGHT;
-    _frame.origin.y -= this.ADDITIONS_HEIGHT;
-    App.SearchEverywhere.setFrame_display(_frame, true);
-
-    var _frame_ = App.webView.frame();
-    _frame_.size.height += this.ADDITIONS_HEIGHT;
-    App.webView.setFrame(_frame_);
-
-    log("expanded");
-    this.IS_EXPAND = true;
-  },
-  setFrameContract: function(_coscript) {
-    if (!App.IS_EXPAND) return false;
-
-    var _frame = App.SearchEverywhere.frame();
-    _frame.size.height -= App.ADDITIONS_HEIGHT;
-    _frame.origin.y += App.ADDITIONS_HEIGHT;
-    App.SearchEverywhere.setFrame_display(_frame, true);
-
-    var _frame_ = App.webView.frame();
-    _frame_.size.height -= App.ADDITIONS_HEIGHT;
-    App.webView.setFrame(_frame_);
-
-    App.IS_EXPAND = false;
   },
   findLayersMatchingPredicate_inContainer_filterByType: function(
     predicate,
@@ -202,7 +171,6 @@ var App = {
     // Tell user that choose layer sucess!
     this.doc.showMessage("Select success!!!");
 
-    this.IS_EXPAND = false;
     App.closeWindow();
   },
   findPageOfLayer(layer) {

@@ -1,7 +1,7 @@
 @import 'webView.js';
 @import 'app.js';
 
-function openWindow(webView) {
+function openWindow(webView, width, height) {
   // SearchEverywhere main window
   var threadDictionary = NSThread.mainThread().threadDictionary();
   var identifier = "com.github.mrpeak.search_text";
@@ -14,10 +14,9 @@ function openWindow(webView) {
     return;
   }
 
-  var windowWidth = 480, windowHeight = 120;
   var SearchEverywhere = NSPanel.alloc().init();
   SearchEverywhere.setFrame_display(
-    NSMakeRect(0, 0, windowWidth, windowHeight),
+    NSMakeRect(0, 0, width, height),
     true
   );
 
